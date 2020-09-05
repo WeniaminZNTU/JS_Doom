@@ -52,6 +52,18 @@ const createButtonHandler = (direction = "next") => {
 nextBtn.addEventListener("click", createButtonHandler("next"));
 prevBtn.addEventListener("click", createButtonHandler("prev"));
 
+img.addEventListener('mouseenter', function(event){
+  const nextIndex = slider.nextIndex;
+  slider.currentIndex = nextIndex;
+  updateView();
+})
+
+img.addEventListener('mouseleave', function(){
+  const prevIndex = slider.prevIndex;
+  slider.currentIndex = prevIndex;
+  updateView();
+})
+
 updateView();
 
 function updateView() {
@@ -62,3 +74,31 @@ function updateView() {
   img.setAttribute("src", src);
   img.setAttribute("title", description);
 }
+
+
+// Task 2
+const button = document.getElementById("butn");
+
+button.addEventListener("click", function (event) {
+  button.textContent = "New change name";
+  // console.log(button.name);
+});
+
+
+// Task 1
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  event.stopPropagation();
+});
+
+input.addEventListener("keyup", function inputHandler(event) {
+  let x = event.key;
+
+  if (x === "Enter") {
+    input.value.log;
+    console.log(input.value);
+  }
+});

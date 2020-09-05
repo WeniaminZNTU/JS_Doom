@@ -31,7 +31,14 @@ class Slider {
   }
 
   set currentIndex(newIndex) {
-    // VALIDATION
+    if( !Number.isInteger(newIndex)){
+      throw new TypeError('Index must be integer');
+    }
+
+    if(newIndex > this.length || newIndex < 0){
+      throw new RangeError(`Index must be i range 0 and ${this.length - 1}`);
+    }
+
     return (this._currentIndex = newIndex);
   }
 

@@ -95,10 +95,9 @@ form.addEventListener("submit", function (event) {
 });
 
 input.addEventListener("keyup", function inputHandler(event) {
-  let x = event.key;
+  const {key} = event
 
-  if (x === "Enter") {
-    input.value.log;
+  if (key === "Enter") {
     console.log(input.value);
   }
 });
